@@ -3,11 +3,11 @@ class HelloWorld
 	Version = 1.0
 	attr_accessor :name
 
-	def initialize(temp_instance_name="Ruby")
-		@name = temp_instance_name
+	def initialize(temp_instance_name="Ruby") #newから参照される。newからの仮引数
+		@name = temp_instance_name #@はインスタンス変数　インスタンス毎違う値をもつ　@@はクラス変数
 	end
 
-	def greet
+	def greet #インスタンスメソッド
 		p @name
 		p self.name
 		self.name=("rruby")	#name= メソッドでgreetメソッドを呼んだ時のレシーバのnameを変更する。
@@ -15,9 +15,9 @@ class HelloWorld
 		p @name
 	end
 
-	class << HelloWorld
+	class << HelloWorld #クラスメソッド　他のインスタンスメソッドとは違う
 		def hello(name)
-			print(name,"said Hello!\n")
+			print(name,"s aid Hello!\n")
 		end
 	end
 
